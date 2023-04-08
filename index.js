@@ -1,11 +1,10 @@
 import { Server } from "socket.io";
 
-// const io = new Server(9000, {
-//   cors: {
-//     origin: "http://localhost:5173",
-//   },
-// });
-const io = new Server(9000);
+const io = new Server(9000, {
+  cors: {
+    origin: "http://localhost:5173",
+  },
+});
 
 let User = [];
 
@@ -22,7 +21,6 @@ const getUser = (userId) => {
 
 io.on("connection", (socket) => {
   console.log("User Connected");
-
   socket.on("addUsers", (userdata) => {
     adduser(userdata, socket.id);
     io.emit("getUsers", User);
