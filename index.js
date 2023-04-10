@@ -3,7 +3,7 @@ const port = process.env.PORT || 9000
 
 const io = new Server(port, {
   cors: {
-    origin: "whatsapp-clone-dikshant.netlify.app",
+    origin: "https://whatsapp-clone-dikshant.netlify.app",
     // origin: "http://localhost:5173",
   },
 });
